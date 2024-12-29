@@ -1,0 +1,27 @@
+server:
+    port: 8084
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:8083/wechat?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+        username: roor
+        password: 
+
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+    configuration:
+        mapper-locations: classpath:mapper/*.xml
+        # 其他配置选项可以根据需要添加
+logging:
+    level:
+        root: INFO
+        org.mybatis: DEBUG
+        org.apache.ibatis: DEBUG
